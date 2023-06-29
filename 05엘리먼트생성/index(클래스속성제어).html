@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>클래스 속성제어</h3>
+    <button type="button" class="btn btn-default" id="btn">클래스 변경</button>
+
+    <script>
+
+        var btn=document.getElementById("btn");
+        btn.onclick=function(){
+            btn.id='xx';
+            // btn.class='xx'; 클래스 이름 안바뀜 class라는 속성자체가 있기 때문에.
+            btn.className=btn.className+" "+'xx';
+            //단일 클래스 이름을 받고싶을땐 className
+            //배열 형태로 받고 실을땐 classList
+            console.log(btn.classList)
+            btn.classList.replace("btn","xxx");//원하는 클래스 변경
+            btn.classList.add('a','b','c')// 클래스 순서대로 추가
+            btn.classList.remove('a');//클래스 삭제
+
+            btn.classList.toggle("sss");//있으면 제거 없으면 추가
+
+        }
+
+
+    </script>
+
+<style>
+    .x{
+        display:block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid violet;
+    }
+    .a{
+        background-color: yellow;
+    }
+</style>
+
+    <hr>
+    <h3>토글버튼=하나의 버튼으로 2가지 이상의 기능을 하는 버튼(클래스를 추가하거나or제거하는 형태로 사용)</h3>
+
+    <a href="#" id="x" class="x">마우스 오버영역</a>
+
+    <script>
+        var x=document.getElementById("x");
+        x.onmouseover=function(){
+            console.log("a")
+
+            x.classList.toggle('a');
+        }
+
+        x.onmouseout=function(){
+            console.log('b')
+            x.classList.toggle('a');
+
+        }
+    </script>
+
+    <hr>
+
+    <button type="button" id="btn1">토글버튼</button>
+
+    <script>
+
+        var btn1=document. getElementById("btn1");
+        btn1.onclick=function(){
+            if(btn1.classList.contains("b")){//b클래스가 있다면
+
+                btn1.classList.remove("b");
+                document.body.style.backgroundColor='white';
+
+            }else{//b클래스가 없다면
+
+                btn1.classList.add("b");
+                document.body.style.backgroundColor='yellow'
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

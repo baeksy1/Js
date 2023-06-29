@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        var num=10;
+        //조건문 ->자바와 동일
+        //js에는 캐스팅 개념이 자바와 다르다  parseInt(num); 인트형으로 형뱐환
+        //
+
+        var arr=new Array();
+        for(var i=0; i<10; i++){
+            arr.push(i+1)
+        }
+        console.log(arr)
+
+
+        console.log('---------')
+        console.log('---------')
+        console.log('---------')
+
+        //향상된 포문
+        for(var i in arr){
+            console.log('인덱스',i); //i는 값이 아닌 인덱스 번호
+            console.log('값',arr[i]);
+        }
+
+        var obj ={'1': '홍길동', '2':'이순신'} //맵함수와 비슷 키:값
+
+        for(var i in obj){
+            console.log(i);//키
+            console.log(obj[i]);
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

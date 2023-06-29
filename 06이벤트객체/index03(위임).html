@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+ <h3 class="title"></h3>
+    
+    <ul class="box">
+        <li>1. 동</li>
+        <li>2. 자</li>
+        <li>3. 신</li>
+        <li>4. 순</li>
+        <li>5. 당</li>
+    </ul>
+
+    <script>
+        var title= document.querySelector(".title");
+        var box=document.querySelector(".box");
+        box.onclick=function(){
+
+            // console.log('이벤트위임');
+            
+            console.log(event.target)//이벤트가 동작한 태그
+            console.log(event.currentTarget);//이벤트가 실제로 걸려있는 태그를 알려줌.
+            // console.log(this)//ul
+
+            //ul태그를 눌렀을때 동작을 안하게 만들어줘야됨
+
+            console.log(event.target.tagName)
+
+            if(event.target.tagName !="LI"){
+                return;
+            }
+
+            title.innerHTML=event.target.innerHTML;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+    <div id="box">
+        <input type="text" id="name1" placeholder="이름을 입력하세요">
+
+        <button id="btn"> 확인</button>
+    </div>
+    <div id="box1">
+        <input type="text" id="list" placeholder="당신의 할일을 입력하세요">
+
+        <button id="btn1"> 확인</button>
+    </div>
+
+
+
+    <script>
+        var name1 = document.getElementById("name1");
+        var box = document.getElementById("box")
+        var btn = document.getElementById("btn");
+
+
+
+
+        var btn1 = document.getElementById("btn1");
+        var list = document.getElementById("list");
+
+        btn.addEventListener('click', function () {
+            var p = document.createElement("p");
+
+            name1.value = name1.value + "님 환영합니다";
+            name1.style.border = "none";
+            btn.remove();
+        });
+
+
+        var ul = document.createElement("ul");
+        ul.className = "list";
+        btn1.onclick = function () {
+            var li = document.createElement("li");
+            var bt = document.createElement("button");
+            var btU = document.createElement("button");
+            var btD = document.createElement("button");
+            bt.innerHTML = "삭제하기";
+            btU.innerHTML = "↑";
+            btD.innerHTML = "↓";
+            li.innerHTML = list.value;
+            li.appendChild(bt);
+            li.appendChild(btU);
+            li.appendChild(btD);
+            ul.appendChild(li);
+            box1.appendChild(ul);
+
+            bt.onclick = function () {
+                li.remove();
+                // this.parentElement.remove();
+            }
+
+            btU.onclick = function () {
+
+                var ul = document.querySelector(".list");
+                var result = confirm('올라가시겠습니까');
+                console.log(result)
+                if (result == true) {
+                    var current = this.parentElement;
+                    var up = current.previousElementSibling;
+                    if (up == null) {
+                        alert("처음행입니다.");
+                        return;
+                    }
+                    ul.insertBefore(current, up);
+                }else{
+                    alert("취소하셨습니다");
+                    return;
+                }
+
+
+            }
+
+            btD.onclick = function () {
+                var ul = document.querySelector(".list");
+                var result = confirm('내려가시겠습니까');
+                
+                
+                if (result == true) {
+                    var current = this.parentElement;
+                    var down = current.nextElementSibling;
+                    if (down == null) {
+                        alert("마지막행입니다.");
+                        return;
+                    }
+                    ul.insertBefore( down,current);
+                }else{
+                    alert("취소하셨습니다");
+                    return;
+                }
+
+
+            }
+
+            list.value = '';
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

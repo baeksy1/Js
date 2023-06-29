@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //원격의 데이터를 주고 받을 때 암묵적으로 json표기 형식을 사용한다.
+        var data=[
+            {id:'kkk123',title:'안녕하세요',age:12},
+            {id:'kkk1234',title:'hi',age:14},
+            {id:'kkk12345',title:'안녕하세요hi',age:13}
+        ]
+
+
+        //data를 전달할 때 반드시 문자열 이어야 합니다.
+        //객체 =>제이슨 문자열로 변경
+        var result=JSON.stringify(data)
+        console.log(result);//모든 객체가 스트링으로 변환되어 사용자에게 전달된다.
+        
+        
+        var obj=JSON.parse(result);
+        console.log(obj);
+
+
+        //제이슨 문자열을 표기할 때 엄격한 규칙 => 숫자를 제외한 키 값은 반드시반드시 
+        //진짜 받느시 ""로 묶는다.
+        // var exam='{id:1"홍길동"}';
+        // JSON.parse(exam);
+        var exam='{"id":"홍길동"}';//중요!!
+        var obj=JSON.parse(exam);
+        console.log(obj);
+
+        </script>
+
+
+
+</body>
+</html>

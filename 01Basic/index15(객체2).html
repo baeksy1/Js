@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //함수로 만드는 객체의 모형
+        function person(name){
+            this.name=name;
+            this.age;
+
+            this.info=function(){
+                console.log(this.age,this.name);//멤버변수처럼 사용하려면 this필수
+            }
+        }
+       var obj= new person('홍길동');
+       console.log(obj);
+       console.log(obj['age']);
+       console.log(obj.name);
+    </script>
+
+
+</body>
+</html>

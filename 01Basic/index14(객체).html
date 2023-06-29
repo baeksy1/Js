@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //js에서 객체는 {}로 표기하고 , 자바의 맵과 같다.
+
+        var person={name: '홍길동',age:20,arr:[1,2,3]};
+        console.log(typeof person)
+
+        //js{}에는 접근하는 방식이 2가지 있다.
+        //.을 이용
+        person.name/* .키 */
+        console.log(person.name)
+        //객체['키']
+        // console.log(person[name]);변수 name을 쓰겠다는 뜻.
+        console.log(person['name']);
+        console.log(person['name']);
+        console.log(person['arr'][0]);//arr의 0번째
+
+
+        //객체안에 객체
+
+        var exam={kor:30,eng:40};
+        var park={name:'박수',age:20,exam:exam};
+
+        console.log(park['exam']);
+        console.log(park['exam']['kor']);
+
+
+        //객체안에 함수
+        var obj={func:function(){ console.log('호출됨')}}
+        // console.log(obj['func']()) //호출됨 출력
+        //obj.func();도 호출됨 출력
+
+        //리스트안에 객체
+        var arr = [
+            {id:1,name:'hong'},
+            {id:2,name:'lee'},
+            {id:3,name:'shin'}
+        ]
+        console.log(arr);
+
+        for(var i in arr){
+            console.log(arr[i]['id']);
+            console.log(arr[i]['name']);
+        };
+
+    </script>
+
+
+</body>
+</html>

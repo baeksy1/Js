@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h3>이벤트 객체 - 이벤트가 발생되면, 함수 안으로 자동으로 이벤트 객체를 전달해준다.</h3>
+
+
+
+    <button id="btn">이벤트 객체 확인</button>
+
+    <script>
+        var btn=document.getElementById("btn");
+        btn.onclick=function(e){
+
+            // console.log(event);//이벤트에 관련한 정보가 있음(첫번쨰 매개변수로 e로 넣어주도록 약속되어있다)
+        
+            console.log(e.target);//이벤트가 실제 동작한 태그
+        
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h3>버튼으로 눌러서 처리하는게 아니라, 동일한 태그 여러개에 대해서 즉시 반영?</h3>
+
+    <h3 class="title"></h3>
+    
+    <ul class="box">
+        <li >1. 동</li>
+        <li >2. 자</li>
+        <li >3. 신</li>
+        <li >4. 순</li>
+        <li >5. 당</li>
+    </ul>
+
+    <script>
+        //반복문으로 다중이벤트 걸기
+
+        var li =document.querySelectorAll(".box li");
+        
+        for(var i=0;i<li.length;i++){
+            //반복문으로 다중이벤트를 걸면 좋은 방법이 아니다.
+            (function(a){
+                li[a].onclick=function(){
+                // console.log(i);==5가 나옴 렉시컬스코프 때문에 5가 계속 나옴 배열을 다 돌고 나서i의 값이 출력이됨.
+                //해결방법 closer 모형으로 바꾸기
+                console.log(li[a].innerHTML)
+            }
+            })(i); //즉시 실행 함수로 a변수를 받아 실행
+            //let 변수로 쓰면 되긴 함 var 변수가 아닌,
+
+            li[i].onclick=function(e){
+                // console.log(this);//인덱스는 접근할 수 없지만 this키워드는 사용가능
+                console.log(e.target)
+
+                document.querySelector(".title").innerHTML=e.target.innerHTML;
+            }
+         
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

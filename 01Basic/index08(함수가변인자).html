@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        var func=function(a,b){
+            // console.log(a,b);
+
+            console.log(arguments);//전달되는 모든 매개변수
+            console.log(arguments.length);
+            console.log(arguments[0]);
+        }
+        //매개변수 개수는 정확히 일치 않아도 호출이 된다.그러나 맞춰서 하는편이 좋음
+        func(1,2,3,4,5,6);
+        func(5,1,1,2,3,4,5);
+        
+    </script>
+
+                                              
+    
+
+</body>
+</html>

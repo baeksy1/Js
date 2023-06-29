@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* window.onload는 화면에서 1개만 사용 가능하고
+        html로드가 끝난 이후에 실행된다 */
+        window.onload=function(){
+            document.getElementById("btn").onclick = function () {
+                alert('기본이벤트~');
+            }
+
+        }
+
+    </script>
+    <button id="btn">
+        기본 이벤트 모델
+    </button>
+
+
+
+
+</body>
+
+</html>

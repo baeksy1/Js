@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">
+        표준이벤트
+    </button>
+
+    <script>
+        var btn = document.getElementById("btn");
+
+        // btn.addEventListener('click',test);
+        // function test(){
+        //     alert("표준이벤트입니다~");
+        // }
+
+
+        btn.addEventListener('click',function(){
+            alert("표준이벤트");
+        });//재사용할 함수가 아니라면 바로 적어서 사용하면 깔끔하다.
+    </script>
+
+
+
+    <button id="btn2">기본이벤트는 동일이벤트 트리거가 안됩니다.</button>
+    <button id="btn3">표준이벤트는 동일 이벤트 트리거가 됩니다.</button>
+
+    <script>
+        var btn2=document.getElementById("btn2");
+        //기본이벤트는 동일이벤트 트리거가 안됨.
+
+        btn2.onclick=function(){
+            alert("1번 이벤트");
+            
+        }
+        btn2.onclick=function(){
+            alert("2번이벤트");
+        }
+
+
+        //표준이벤트는 이벤트 체이닝이 됨.
+        var btn3=document.getElementById("btn3");
+
+        btn3.addEventListener('click',function(){
+            alert("1번 이벤트");
+            console.log(this);
+        });
+        btn3.addEventListener('click',function(){
+            alert("2번 이벤트")
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
