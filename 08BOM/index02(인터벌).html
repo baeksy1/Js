@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="stopInterval">인터벌 중지</buttton>
+    <script>
+        var i=0;
+        var stop=setInterval(function(){
+            console.log(i++,);
+        },100)//윈도우 생략가능
+
+        var stopInterval=document.getElementById("stopInterval");
+        stopInterval.onclick=function(){
+             clearInterval(stop);//셋 인터벌이 반환하는 아이디값
+        }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>최신 관심 목록</h3>
+    <div class="cartList">
+
+    </div>
+
+    <script>
+        var div=document.querySelector(".cartList");
+        var img=document.createElement("img");
+        var img1=document.createElement("img");
+        var nd=document.createElement("div");
+        img1.src=localStorage.getItem(localStorage.getItem("count")-1);
+        img.src=localStorage.getItem(localStorage.getItem("count"));
+        img.width="300";
+        img1.width="300";
+        nd.appendChild(img1)
+        nd.appendChild(img);
+
+        div.innerHTML=nd.innerHTML;
+        
+
+
+    </script>
+
+</body>
+</html>

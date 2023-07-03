@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 class="stop">여기를 누르면 경고창이 안아와요~</h3>
+    
+    <script>
+
+        //setInterval과 사용방법이 동일함
+        // var i=3;
+        // var time=setTimeout(function(){
+
+        //   alert('그만!!')
+        // },3000);
+
+
+        var stop=document.querySelector(".stop");
+        stop.onclick=function(){
+            clearTimeout(time);
+            alert('중지됨')
+        }
+
+        setTimeout(test('helloword'),5000);//즉시 실행됨 틀린 구문
+        // setTimeout(test,5000);//5초 뒤 test구문이 실행
+        // setTimeout(test,5000,'hello');//
+        // setTimeout(function(){
+        //     return function(){}
+        //     test('helloword')
+        // },5000);
+
+        function test(x){
+            return function(){
+                
+                alert('이거 타이밍 펑션이야'+ x)
+            }
+        }
+
+        setTimeout(function(x){
+            alert(x);
+        },5000,'매개변수');
+
+
+    </script>
+
+
+</body>
+</html>

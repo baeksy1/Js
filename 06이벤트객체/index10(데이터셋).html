@@ -11,7 +11,7 @@
 
     <h3>data-자유이름="문자열"</h3>
     <ul class="box">
-        <li><a href="https://www.naver.com" data-info="20">1홍길동</a> </li>
+        <li><a href="https://www.naver.com" data-t="20">1홍길동</a> </li>
         <li><a href="https://www.naver.com" data-info='{"id":"aaa","age":"20"}'>2이순신</a> </li><!-- 여러개의 정보를 담을땐 json문자열 -->
         <li><a href="https://www.naver.com" data-info="40">3홍길자</a> </li>
         <li><a href="https://www.naver.com" data-info="50">4신사</a> </li>
@@ -28,9 +28,11 @@
                 return;
             }
             console.dir(event.target)
-            console.log(event.target.dataset.info);
+            console.log(event.target.dataset);
 
-            var value=event.target.dataset.info;
+            console.log(event.target.dataset.t);
+
+            var value=event.target.dataset.t;
             var obj=JSON.parse(value);
 
 

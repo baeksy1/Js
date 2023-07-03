@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button id="btn">이동</button>
+    <button onclick="history.go(1)">앞1</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick=function(){
+            location.href='index06.html';
+
+
+            //replaceState - 기록을 변경
+            history.replaceState({data:'x'},null,null);//데이터'',제목 null,url null;
+            
+        
+        }
+
+        console.log(history.state);
+        //사용자가 뒤로 넘어왔다는 단서. 
+        // 뒤로가기를 했을때 데이터 값이 나옴
+        //있으면 경고창을 띄우고 없으면 안띄우는 형태로 사용
+
+        if(history.state==null){
+
+            alert('경고창 처음에만 나옵니다.')
+        }
+
+
+
+
+        //reload는 새로고침
+        // setInterval(function(){
+        //     location.reload();
+        // },500);
+
+        
+
+    </script>
+
+</body>
+</html>

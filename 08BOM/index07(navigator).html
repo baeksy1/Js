@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // console.log(navigator)
+        //  console.log(navigator.userAgent)
+
+        var agent=navigator.userAgent.toLowerCase();//
+        //사용자의 접속한 브라우저 정보를 확인
+
+        //firefox
+        if(agent.indexOf('firefox')!=-1){//
+            console.log('firefox로 접속')
+        }else if(agent.indexOf('edg')!=-1){
+            console.log('edge로 접속')
+        }else if(agent.indexOf('safari')!=-1){
+            console.log('safari로 접속')
+        }else if(agent.indexOf('chrome')!=-1){
+            console.log('chrome로 접속')
+        }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>메인창</h3>
+
+    <!-- 페이지가 시작되면 팝업창을 띄워준다. 사용사자 오늘하루 이 창을 열지 않기 클릭하면 쿠키 생성하고 쿠키가 있다면 다음 접속시
+        팝업창 xx
+    -->
+
+    <script src="popup.js">
+        // var arr =document.cookie.split("; ")
+        // var count=false;
+        // for(var i =0; i<arr.length; i++){
+        //     if(arr[i]=='check=check'){
+        //         count=true;
+        //         break;
+        //     }
+        // }
+        console.log(1);
+        if(getCookie('check1')!=true) open('popup.html','팝업창','width=200px, height=200px ,left=300px, top=400px');
+        
+    
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="d">연결버튼</button>
+
+    <script>
+
+        var d=document.getElementById('d');
+
+        d.addEventListener('click', function(){
+
+            //open(문서주소,별칭,옵션)            
+
+            // window.open('http://www.naver.com');//바로 옆 생성
+            // window.open('pop.html');//바로 옆 생성
+
+            window.open('pop.html','문서별칭','width= 200px, height=200px , left=300px , top=300px');
+        });
+
+
+    </script>
+
+
+</body>
+</html>

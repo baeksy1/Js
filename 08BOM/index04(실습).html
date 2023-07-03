@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        .bgImg{ animation:fadeIn 1s ease-in-out;}
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+            }to{
+                opacity:1;
+
+            }
+        }
+
+    </style>
+
+
+
+    <div>
+        <img src="img/slide1.jpg" class="bgImg">
+    </div>
+
+
+
+
+    <script>
+        var div=document.querySelector("div")
+        var i=2;
+        var go=setInterval(function(){
+
+            var im=document.createElement('img');
+            var div1=document.createElement('div');
+            im.src="img/slide"+i+".jpg";
+            im.classList.add("bgImg");
+            div1.appendChild(im);
+
+            div.innerHTML=div1.innerHTML;
+           
+            i++;
+            if(i==5){
+                i=1;
+            }
+        },3000)
+
+
+    </script>
+
+
+
+</body>
+</html>

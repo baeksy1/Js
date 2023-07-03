@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form name="action">
+        <h3>
+            가입창
+        </h3>
+
+        이름:<input type="text" name="nam" >
+        번호:<input type="text" name="phone"onblur="phoneFunc()">
+        분야:
+        <input type="checkbox" name="check">css
+        <input type="checkbox" name="check">js
+        <input type="checkbox" name="check">html
+
+        <input type="submit" value="확인" name="bt">
+    </form>
+
+
+    <script>
+        //폼태그는 document의 자식중 하나로 유일하게 name속성으로 접근할 수 있다.
+        //input태그에서 폼태그의 자식이므로 name속성으로 접근할 수 있다.
+
+        console.log(document.action)
+        console.log(document.action.nam)//==  이름:<input type="text" name="nam">
+
+        var bt = document.action.bt;
+
+
+        bt.onclick = function () {
+            event.preventDefault();//고유이벤트 중단
+
+            if (document.action.nam.value == '') {
+                alert('아이디는 필수');
+                document.action.nam.focus();//초점이 이름 입력태그에 맞춰짐
+                return;
+            } else if (document.action.phone.value.length != 11) {
+
+                alert('번호는 -없이 11글자 입력 필수');
+                document.action.phone.focus();//초점이 번호 입력태그에 맞춰짐
+
+                return
+            } else {
+                var cnt = 0;
+                var ck = document.action.check;
+                for (var i = 0; i < ck.length; i++) {
+                    if (ck[i].checked) {
+                        cnt++;
+                    }
+                }
+                if (cnt == 0) {
+                    alert('1개 이상 선택')
+                    return;
+                }
+            }
+
+
+
+
+        }
+
+
+
+        function phoneFunc(){
+            document.action.phone.value=document.action.phone.value.replaceAll('-','');
+
+            console.log(document.action.phone.value)
+            
+
+        }
+    </script>
+
+</body>
+
+</html>
