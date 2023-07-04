@@ -14,6 +14,7 @@
     </div>
 
     <script>
+
         var div=document.querySelector(".cartList");
         var img=document.createElement("img");
         var img1=document.createElement("img");
@@ -27,8 +28,12 @@
 
         div.innerHTML=nd.innerHTML;
         
+        for(var i=0; i<localStorage.key(localStorage.getItem("count")); i++){
+            if(localStorage.getItem(i)!=NaN){
 
-
+                localStorage.removeItem(i);
+            }
+        }
     </script>
 
 </body>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .movie{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+
+            width: 1800px;
+            padding: 30px;
+            margin: 0 auto;
+
+
+        }
+        .movie .mo{
+            flex-basis:33.333%;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .movie .mo img{
+            position:absolute;
+            left:0;
+            top:-20px;
+        }
+        .movie .mo .inner{
+            padding-left: 300px;
+
+        }
+        .movie .mo .summary{
+            height: 200px;
+            overflow: hidden;
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+    <div class="movie">
+        <!-- <div class="mo">
+            <img src="">
+            <div class="inner">
+                <h3>제목</h3>
+                <p>섬머리~</p>
+                <ul>
+                    <li>장르</li>
+                    <li>장르</li>
+                </ul>
+            </div>
+        </div> -->
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        fetch("https://yts.mx/api/v2/list_movies.json?limit=40&quality=1080p&sort_by=rating")
+            .then(function (response) {
+                if (response.status != 200) {
+                    console.log('잘못된 출력입니다');
+                }
+
+                return response.json();
+
+            }).then(function (data) {
+                var arr = data.data.movies;
+                console.log(arr)
+                //medium_cover.image, title, summary,genres
+
+                var sum = "";//화면을 그릴 문자열
+                for (var i = 0; i < arr.length; i++) {
+                    var img = arr[i].medium_cover_image;
+                    var title = arr[i].title;
+                    var summary = arr[i].summary;
+                    var genres = arr[i].genres;
+                    sum += '<div class="mo">';
+                    sum += '<img src="'+img+'">';
+                    sum += '<div class="inner">';
+                    sum += '<h3 class"title">'+title+'</h3>';
+                    sum += '<p class="summary">'+summary+'</p>';
+                    sum += '<ul class="genres">';
+                    sum += '<li>'+genres+'</li>';
+                    sum += '</ul>';
+                    sum += '</div>';
+                    sum += '</div>';
+                }
+                document.querySelector(".movie").innerHTML=sum;
+            })
+    </script>
+</body>
+
+</html>

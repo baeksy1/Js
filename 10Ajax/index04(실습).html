@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // https://raw.githubusercontent.com/yopy0817/data_example/master/hello.json
+
+
+        fetch("https://raw.githubusercontent.com/yopy0817/data_example/master/hello.json")
+        .then(function(response){
+            if(response.status!=200){
+                console.log('잘못된 출력입니다');
+            }
+            
+            return response.json();
+
+        }).then(function(data){
+            console.log("bno의 값: "+ data.bno);
+            console.log("title의 값: "+ data.title);
+            console.log("content의 값: "+ data.content);
+        })
+
+
+
+    </script>
+
+
+
+</body>
+</html>

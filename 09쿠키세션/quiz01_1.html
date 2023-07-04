@@ -17,28 +17,34 @@
         <img src="img/4.jpg" width="300">
     </div>
 
-    <button type="button" onclick="location.href='quiz01_result.html';" >최신정보확인하기</button>
-
+    <button type="button" onclick="location.href='quiz01_1_result.html';" >최신정보확인하기</button>
 
     <script>
-        
         var list=document.querySelector(".list");
-        if(localStorage.getItem("count")!="NaN"){
-
-            var count=localStorage.getItem("count");
-        }else{
-            var count=1;
-        }
+        
         list.onclick=function(){
-            if(event.target.tagName=="IMG"){
-                
-                localStorage.setItem("count",count);
-                localStorage.setItem(count++,event.target.src);
+            
+            if(event.target.tagName!='IMG'){
+                return;
             }
+            var arr=new Array(0);//arr=[];
+
+            //기존 로컬 스토리지가 있다면 얻어와서  arr변경
+            if(localStorage.getItem('like')!=null){
+                arr=JSON.parse(localStorage.getItem('like'));
+            }
+            if(arr.length>=2){
+                arr.shift();//앞에서 하나 빼주기
+            }
+
+            arr.push(event.target.src);
+            localStorage.setItem('like',JSON.stringify(arr));
+
+
         }
 
 
-    </script>  
+    </script>
 
 
 </body>
