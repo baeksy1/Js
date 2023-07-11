@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/kakao.min.js"></script>
+
+
+</head>
+
+<body>
+   <!--  카카오 API<br>
+    5dca2eb5bb57875d8a7fdef703cde41e -->
+
+    <a id="kakao-login-btn" href="javascript:loginWithKakao()">
+        <img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
+          alt="카카오 로그인 버튼" />
+      </a>
+      <p id="token-result"></p>qjs
+
+    <script>
+        //1.카카오 sdk초기화
+        Kakao.init('5dca2eb5bb57875d8a7fdef703cde41e');
+
+        Kakao.isInitialized();
+        //2. 인가서버 창 띄우기
+
+        function loginWithKakao(){
+            Kakao.Auth.authorize({
+            redirectUri: 'http://172.30.1.76:5500/11API/index03.html',
+        });
+        }
+
+        
+    </script>
+
+</body>
+
+</html>

@@ -31,6 +31,7 @@
         //     //reject = 실패
         //    var promise= fetch('hi.txt');
         //     promise.then()//then절 안엔 콜백function을 쓰면 됨.
+        // then-콜백 함수를 받는 기능 매개변수에 실행 결과값을 전달 then(function(response){})
 
         // //promise객체 안에는 then(콜백) 함수를 사용할 수 있다
         // //콜백함수 = 콜했을 대 백 받을 약속된 함수
@@ -44,7 +45,7 @@
         //json()는 body에 있느 데이터를 object로 변환 - return:promise객체
 
         // fetch('hi.txt').then(function (response) {
-        //     console.log(response.text())//promise반환
+        //     console.log(response.text())//--text함수는 promise반환 > then함수에 담아서 콜백함수로 만들 수 있음
 
           
         // })
@@ -92,9 +93,7 @@
             console.log(e)//에러 발생시 실행됨.
         })
    
-            console.log(fetch('hi.txt'))
-
-
+           
     </script>
 
 </body>
